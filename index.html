@@ -13,23 +13,18 @@
     <form class="form-inline searchForm" role="form">
       <div class="form-group">
         <input class="form-control" placeholder="Search by name" ng-model="friendFilter.name">
-        <input class="form-control" placeholder="Search by State" ng-model="friendFilter.location.state">
+        <input class="form-control" placeholder="Search by state" ng-model="friendFilter.location.state">
 
-        <select class="input-medium" ng-model="sortProp">
-          <option value="name">Name</option>
-          <option value="friend_count">#Friends</option>
-          <option value="location.city">City</option>
-          <option value="location.state">State</option>
-          <option value="location.country">Country</option>
+        <select class="input-medium" ng-options="option.val as option.label for option in options" ng-model="sortProp">
         </select>
-
+        
         <select class="input-medium" ng-model="sortDir">
           <option value="-">Descending</option>
           <option value="+">Ascending</option>
         </select>
       </div>
     </form>
-
+{{sortDir}}.{{sortProp}}
     <ul>
       <li class='friend' ng-repeat = "friend in friends | filter: friendFilter | orderBy: sortDir + sortProp">
         <img class="profile-pic" ng-src='{{friend.pic_square}}'>

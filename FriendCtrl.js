@@ -1,24 +1,25 @@
 angular.module('myApp').controller('FriendCtrl', function($scope) {
     $scope.test = "Comment tallez vous?";
 
-    /*$scope.options = [{
+    $scope.options = [{
         val: "name",
         label: "Name"
     }, {
         val: "friend_count",
         label: "#Friends"
     }, {
-        val: "name",
-        label: "Name"
+        val: "location.city",
+        label: "City"
     }, {
-        val: "name",
-        label: "Name"
+        val: "location.state",
+        label: "State"
     }, {
-        val: "name",
-        label: "Name"
-    }, {
-        
-    }]*/
+        val: "location.country",
+        label: "Country"
+    }];
+
+    $scope.sortProp = '';
+    $scope.sortDir = '';
 
     $scope.friends =  [{
     name: 'Preston McNeil',
